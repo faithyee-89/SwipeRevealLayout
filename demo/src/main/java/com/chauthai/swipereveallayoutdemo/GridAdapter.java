@@ -39,7 +39,7 @@ public class GridAdapter extends ArrayAdapter<String> {
             convertView = mInflater.inflate(R.layout.grid_item, parent, false);
 
             holder = new ViewHolder();
-            holder.swipeLayout = (SwipeRevealLayout) convertView.findViewById(R.id.swipe_layout);
+            holder.swipeLayout = convertView.findViewById(R.id.swipe_layout);
             holder.frontView = convertView.findViewById(R.id.front_layout);
             holder.deleteView = convertView.findViewById(R.id.delete_layout);
             holder.textView = (TextView) convertView.findViewById(R.id.text);

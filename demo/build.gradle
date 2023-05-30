@@ -1,14 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    namespace 'com.chauthai.swipereveallayoutdemo'
+    compileSdk 33
 
     defaultConfig {
-        applicationId "com.chauthai.swipereveallayout"
-        minSdkVersion 14
-        targetSdkVersion 24
-        versionCode 7
+        minSdk 24
+        targetSdk 33
+        versionCode 1
         versionName "1.4.0"
     }
     buildTypes {
@@ -20,9 +19,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.android.support:design:24.2.0'
-    compile 'com.android.support:recyclerview-v7:24.2.0'
-    compile project(':swipe-reveal-layout')
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api "androidx.appcompat:appcompat:1.6.1"
+    api project(':swipe-reveal-layout')
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
 }
