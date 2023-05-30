@@ -27,24 +27,15 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:background="#EB5546"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="70dp"
+                    android:layout_width="130dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:background="@android:color/darker_gray"
                     android:textColor="@android:color/white"
-                    android:text="More"
-                    android:onClick="moreOnClick"/>
-
-                <TextView
-                    android:layout_width="70dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:background="@android:color/holo_red_dark"
-                    android:textColor="@android:color/white"
-                    android:text="Delete"
+                    android:text="删除"
                     android:onClick="deleteOnClick"/>
             </LinearLayout>
 

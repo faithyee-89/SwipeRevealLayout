@@ -10,15 +10,34 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.chauthai.swipereveallayout.SwipeRevealLayout;
+
 public class MainActivity extends AppCompatActivity {
+
+    private SwipeRevealLayout swipeRevealLayout1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        swipeRevealLayout1 = findViewById(R.id.swipe_layout_1);
+        swipeRevealLayout1.setSwipeListener(new SwipeRevealLayout.SwipeListener() {
+            @Override
+            public void onClosed(SwipeRevealLayout view) {
+                Toast.makeText(MainActivity.this, "Layout 1 onClosed", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onOpened(SwipeRevealLayout view) {
+                Toast.makeText(MainActivity.this, "Layout 1 onOpened", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSlide(SwipeRevealLayout view, float slideOffset) {
+            }
+        });
     }
 
     @Override
@@ -48,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void layoutOneOnClick(View v) {
         Toast.makeText(MainActivity.this, "Layout 1 clicked", Toast.LENGTH_SHORT).show();
+        swipeRevealLayout1.close(true);
     }
 
     public void layoutTwoOnClick(View v) {
@@ -68,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void deleteOnClick(View v) {
         Toast.makeText(MainActivity.this, "Delete clicked", Toast.LENGTH_SHORT).show();
+        swipeRevealLayout1.close(true);
     }
 
     public void archiveOnClick(View v) {
